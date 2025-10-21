@@ -1,0 +1,103 @@
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#search input {
+    padding-left: 3rem;
+    padding-right: 1rem;
+    width: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-position: none !important;
+    background-image: none !important;
+}
+
+#search-engine-selector {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+#search-engine-selector:hover,
+#search-engine-selector:focus {
+    background-color: hsl(var(--color-white-hsl) / 0.1);
+    outline: none;
+}
+
+#search-engine-selector svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#search-submit {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 3rem;
+    min-width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0.5rem 0.5rem 0;
+    transition: background-color 0.2s ease;
+}
+
+#search-submit:hover,
+#search-submit:focus {
+    outline: none;
+}
+
+#search-submit svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    #search-submit {
+        background: hsl(var(--color-white-hsl) / 0.1);
+        color: var(--primary-font-color);
+        border: 0.125rem solid hsl(var(--color-white-hsl) / 0.25);
+        border-left: none;
+    }
+    
+    #search-submit:hover,
+    #search-submit:focus {
+        background-color: hsl(var(--color-white-hsl) / 0.2);
+        border-color: hsl(var(--color-white-hsl) / 0.5);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #search-submit {
+        background: hsl(var(--color-black-hsl) / 0.05);
+        color: var(--primary-font-color);
+        border: 0.125rem solid hsl(var(--color-black-hsl) / 0.25);
+        border-left: none;
+    }
+    
+    #search-engine-selector:hover,
+    #search-engine-selector:focus {
+        background-color: hsl(var(--color-black-hsl) / 0.1);
+    }
+    
+    #search-submit:hover,
+    #search-submit:focus {
+        background-color: hsl(var(--color-black-hsl) / 0.1);
+        border-color: hsl(var(--color-black-hsl) / 0.5);
+    }
+}
